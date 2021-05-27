@@ -7,7 +7,7 @@
     padding: 1rem 3rem;
     height: 10vh;
     width: 100%;
-    background-color: $black-primary;
+    background-color: rgb(216, 206, 206);
 
 
     &__menu{
@@ -71,3 +71,26 @@
      }
   }
   
+
+
+
+  @media (max-width: $breakpoint-small) {
+    .header {
+       padding: 1rem;
+ 
+       form {
+          flex: 1;
+       }
+ 
+       &__menu {
+          display: block;
+       }
+       &__logo {
+          display: none;
+       }
+ 
+       &__icons > *:not(img) {
+          display: none;
+       }
+    }
+ }
