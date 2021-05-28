@@ -30,7 +30,7 @@ const handleClick=(value)=>{
 }
 
     return (
-        <div className='CategoriesBar'>
+        <div className='categoriesBar'>
             {keywords.map((value, i) => (
             <span   key={i}
             onClick={()=> handleClick(value)} 
