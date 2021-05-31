@@ -6,11 +6,15 @@
 
    display: flex;
    overflow-x: scroll;
+  
+   top: 10vh;
+   margin-left: 20px;
+  
 
-   &::-webkit-scrollbar {
+    &::-webkit-scrollbar {
       width: 0px;
    }
-   scrollbar-width: none;
+   scrollbar-width: 0px;
 
    span {
       margin-right: 1rem;
