@@ -3,7 +3,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import CategoryBar from "../../components/CatagoriesBar/CategoryBar";
 import GoToTop from "../../components/ScrollToTopButton";
 import Video from "../../components/Videos/Video";
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { getPopularVideos } from "../../Redux/actions/videos.action";
 
 const HomeScreen = () => {
@@ -14,13 +14,17 @@ const HomeScreen = () => {
      dispatch(getPopularVideos())
 
    },[dispatch])
+
+
+
+   const {videos} = useSelector( state => state.homeVideos)
   return (
     <Container>
       <CategoryBar />
       <Row>
-        {[...new Array(20)].map(() => (
-          <Col lg={3} md={4}>
-            <Video />
+        { videos.map((video) => (
+          <Col lg={3} md={4} key={video.id}>
+            <Video video={video}/>
           </Col>
         ))}
       </Row>

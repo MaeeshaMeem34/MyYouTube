@@ -25,7 +25,7 @@ import {
        videos: [],
        loading: false,
        nextPageToken: null,
-       activeCategory: 'All',
+       
     },
     action
  ) => {
@@ -35,14 +35,10 @@ import {
        case HOME_VIDEOS_SUCCESS:
           return {
              ...state,
-             videos:
-                state.activeCategory === payload.category
-                   ? [...state.videos, ...payload.videos]
-                   : payload.videos,
- 
+             videos: payload.videos,
              loading: false,
              nextPageToken: payload.nextPageToken,
-             activeCategory: payload.category,
+             
           }
  
        case HOME_VIDEOS_FAIL:

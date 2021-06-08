@@ -23,7 +23,7 @@ export const getPopularVideos =()=> async dispatch =>{
             payload: {
                 videos: data.items,
                 nextPageToken: data.nextPageToken,
-                category: 'All',
+               
 
             }
         })
